@@ -8,6 +8,7 @@
  *
  *@s: pointer indicates to the string
  */
+
 void print_rev(char *s)
 {
 	int word = 0;
@@ -26,5 +27,4 @@ void print_rev(char *s)
 		s--;
 	}
 	_putchar('\n');
-
 }
