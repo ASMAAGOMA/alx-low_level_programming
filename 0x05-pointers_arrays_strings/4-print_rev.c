@@ -26,7 +26,7 @@ void print_rev(char *s)
 	s--;
 	for (temp = word; temp > 0; temp++)
 	{
-		_putchar(*s);
+		_putchar(*(s + i);
 		s--;
 	}
 	_putchar('\n');
