@@ -11,23 +11,18 @@
 
 void print_rev(char *s)
 {
-	int word = 0;
-
-	int temp;
+	int len = 0;
 
 	int i = 0;
 
-
-	while (*s != '\0')
+	while (s[len] != '\0')
 	{
-		i++;
-		s++;
+		len++;
 	}
 	s--;
-	for (temp = word; temp > 0; temp++)
+	for (i = len - 1; i >= 0; i--)
 	{
-		_putchar(*(s + i);
-		s--;
+		_putchar (s[i]);
 	}
 	_putchar('\n');
 }
