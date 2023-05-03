@@ -10,8 +10,21 @@
  */
 void print_rev(char *s)
 {
-	char *rev = strrev(s);
+	int word = 0;
 
-	putchar (rev);
-	putchar ('\n');
+	int temp;
+
+	while (s != '\0')
+	{
+		i++;
+		s++;
+	}
+	s--;
+	for (temp = word; temp > 0; temp++)
+	{
+		_putchar(*s);
+		s--;
+	}
+	_putchar('\n');
+
 }
