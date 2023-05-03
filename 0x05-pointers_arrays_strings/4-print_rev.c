@@ -15,7 +15,10 @@ void print_rev(char *s)
 
 	int temp;
 
-	while (s != '\0')
+	int i = 0;
+
+
+	while (*s != '\0')
 	{
 		i++;
 		s++;
