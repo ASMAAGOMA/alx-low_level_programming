@@ -20,11 +20,11 @@ void puts_half(char *str)
 			mid = len / 2;
 		while (*str != '\0')
 		{
-			i++
+			i++;
 		for (i > mid; i <= len; i++)
 		{
 			putchar (str[i]);
 		}
-		putchar ('\n);
+		putchar ('\n');
 		}
-
+}
