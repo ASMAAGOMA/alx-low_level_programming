@@ -13,8 +13,8 @@ void puts2(char *str)
 
 	while (str[i] != '\0')
 	{
-		i++;
 		putchar (str[i]);
+		i += 2;
 	}
 	putchar ('\n');
 }
