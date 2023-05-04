@@ -25,3 +25,4 @@ for (j = i - 1; j <= 0; j--)
 	putchar (s[i]);
 }
 putchar ('\n');
+}
