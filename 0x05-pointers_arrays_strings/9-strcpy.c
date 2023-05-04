@@ -16,7 +16,7 @@ char *_strcpy(char *dest, char *src)
 
 	size_t len = strlen(src);
 
-	memest(dest, 0, len + 1);
+	memset(dest, 0, len + 1);
 
 	for (i = 0; i < len; i++)
 	{
