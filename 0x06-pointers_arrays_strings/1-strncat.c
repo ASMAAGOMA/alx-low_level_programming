@@ -12,7 +12,7 @@
 char *_strncat(char *dest, char *src, int n)
 {
 	size_t dest_len = strlen(dest);
-	size_t src_len = strlen(src, n);
+	size_t src_len = strnlen(src, n);
 
 	memcpy(dest + dest_len, src, src_len);
 	dest[dest_len + src_len] = '\0';
