@@ -11,19 +11,27 @@
 
 char *cap_string(char *str)
 {
-	char *resuit = malloc(sizeof(char) * strlen(str) + 1);
+	char *result = malloc(sizeof(char) * strlen(str) + 1);
 	int len = strlen(str);
 
 	int i = 0;
+	int j = 0;
 
-	str[0] = toupper(str[0]);
+
+	result[0] = toupper(str[0]);
 	for (i = 1; i < len; i++)
 	{
 		if (isspace(str[i - 1]) || ispunct(str[i - 1]))
 		{
-			str[i] = toupper(str[i]);
+			result[i] = toupper(str[i]);
+		}
+		else
+		{
+			result[j] = str[i];
 		}
 	}
-	return (resuit);
+	result[len] = '\0';
+
+	return (result);
 }
 
