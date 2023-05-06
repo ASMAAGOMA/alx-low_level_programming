@@ -11,7 +11,7 @@
 
 char *cap_string(char *str)
 {
-	malloc(sizeof(char) * strlen(str) + 1)
+	char *resuit = malloc(sizeof(char) * strlen(str) + 1);
 	int len = strlen(str);
 
 	int i = 0;
@@ -24,6 +24,6 @@ char *cap_string(char *str)
 			str[i] = toupper(str[i]);
 		}
 	}
-	return (str);
+	return (resuit);
 }
 
