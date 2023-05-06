@@ -11,6 +11,7 @@
 
 char *cap_string(char *str)
 {
+	malloc(sizeof(char) * strlen(str) + 1)
 	int len = strlen(str);
 
 	int i = 0;
