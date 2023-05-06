@@ -5,34 +5,37 @@
 
 /**
  * *cap_string - a function that capitalizes all words of a string.
- *  @str: the string to be changed
- *  Return: the value of str
+ *@str: the string to be changed
+ *Return: the value of str
  */
-
 char *cap_string(char *str)
 {
-	char *result = malloc(sizeof(char) * strlen(str) + 1);
-	int len = strlen(str);
-
 	int i = 0;
-	int j = 0;
 
-
-	result[0] = toupper(str[0]);
-	for (i = 1; i < len; i++)
+	while (str[i])
 	{
-		if (isspace(str[i - 1]) || ispunct(str[i - 1]))
+		while (!(str[i] >= 'a' && str[i] <= 'z'))
+			i++;
+		if (str[i - 1] == ' ' ||
+		str[i - 1] == '\t' ||
+		str[i - 1] == '\n' ||
+		str[i - 1] == ',' ||
+		str[i - 1] == ';' ||
+		str[i - 1] == '.' ||
+		str[i - 1] == '!' ||
+		str[i - 1] == '?' ||
+		str[i - 1] == '"' ||
+		str[i - 1] == '(' ||
+		str[i - 1] == ')' ||
+		str[i - 1] == '{' ||
+		str[i - 1] == '}' ||
+		i == 0)
 		{
-			result[i] = toupper(str[i]);
+			str[i] -= 32;
 		}
-		else
-		{
-			result[j] = str[i];
-			j++;
-		}
+		i++;
 	}
-	result[len] = '\0';
-
-	return (result);
+	i++;
 }
+
 
