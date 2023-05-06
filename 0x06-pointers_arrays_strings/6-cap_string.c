@@ -28,6 +28,7 @@ char *cap_string(char *str)
 		else
 		{
 			result[j] = str[i];
+			j++;
 		}
 	}
 	result[len] = '\0';
