@@ -14,13 +14,13 @@ int is_palindrome(char *s)
 	{
 		return (1);
 	}
-	else if (*s != *(s + strlen(S) - 1))
+	else if (*s != *(s + strlen(s) - 1))
 	{
 		return (0);
 	}
 	else
 	{
-		*(s + strlen(S) - 1) = '\0';
+		*(s + strlen(s) - 1) = '\0';
 		return (is_palindrome(s + 1));
 	}
 }
