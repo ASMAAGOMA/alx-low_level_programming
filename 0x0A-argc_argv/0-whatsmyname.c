@@ -5,7 +5,8 @@
  * main - main function
  * @argv: num of arguments
  * @argc: the arguments
- *Return:the value 0
+ *
+ *Return: Always (0)
  */
 
 int main(int argc__attribute__((unused)), char *argv[])
