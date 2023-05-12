@@ -9,8 +9,8 @@
  * @argc: the strings og arguments
  */
 
-int main(int argv, char *argc[])
+int main(int argc, char *argv[])
 {
-	printf("%d\n", argc);
+	printf("%d\n", argc - 1);
 	return (0);
 }
