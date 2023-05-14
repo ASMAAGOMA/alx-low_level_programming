@@ -3,18 +3,18 @@
 
 /**
  *_strlen - Returns the length of a string.
- *@str: The string to get the length of.
+ *@s: The string to get the length of.
  *
  *Return: The length of the string.
  */
 
-size_t _strlen(const char *str)
+int _strlen(char *s)
 {
-	const char *ptr = str;
+	int len = 0;
 
-	while (*ptr != '\0')
+	while (s[len] = '\0')
 	{
-		ptr++;
+		len++;
 	}
-	return ((size_t)(ptr - str));
+	return (len);
 }
