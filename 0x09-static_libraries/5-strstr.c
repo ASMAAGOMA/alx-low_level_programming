@@ -10,7 +10,7 @@
  */
 
 char *_strstr(char *haystack, char *needle)
-i{
+{
 	char *start_haystack, *start_needle;
 
 	while (*haystack)
