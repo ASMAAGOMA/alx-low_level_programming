@@ -10,7 +10,7 @@
  *Return: Pointer to the resulting string dest
  */
 
-char *_strncpy(char *dest, const char *src, size_t n)
+char *_strncpy(char *dest, char *src, int n)
 {
 	size_t i;
 
