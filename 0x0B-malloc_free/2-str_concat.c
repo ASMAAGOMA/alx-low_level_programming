@@ -12,15 +12,10 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	size_t s1len;
-	size_t s2len;
+	size_t s1len = strlen(s1);
+	size_t s2len =  strlen(s2);
 
-	s1len = strlen(s1);
-	s2len = strlen(s2);
-
-	char *concatenated;
-
-	concatenated = malloc((s2len) + (s1len) + 1 * sizeof(char));
+	char *concatenated = malloc((s2len) + (s1len) + 1 * sizeof(char));
 
 	if (s1 == NULL)
 	{
