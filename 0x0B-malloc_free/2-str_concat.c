@@ -16,9 +16,11 @@ char *str_concat(char *s1, char *s2)
 	size_t s2len;
 
 	s1len = strlen(s1);
-
 	s2len = strlen(s2);
+
 	char *concatenated;
+
+	concatenated = malloc((s2len) + (s1len) + 1 * sizeof(char));
 
 	if (s1 == NULL)
 	{
@@ -28,14 +30,13 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = " ";
 	}
-	concatenated = malloc((strlen(s1)) + (strlen(s2)) + 1 * sizeof(char));
-
 	if (concatenated == NULL)
 	{
 		return (NULL);
 	}
 	strcpy(concatenated, s1);
 	strcat(concatenated, s2);
+	return (concatenated);
 }
 
 
