@@ -12,7 +12,11 @@
 
 char *_strdup(char *str)
 {
-	int stringlen = strlen(str);
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+	size_t stringlen = strlen(str);
 	char *duplication;
 
 	if (str == NULL)
