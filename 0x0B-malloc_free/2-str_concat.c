@@ -23,8 +23,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = " ";
 	}
-	concatenated = malloc((len1 + len2 + 1) * sizeof(char));
-
 	while (s1[len1] != 0)
 	{
 		len1++;
@@ -33,11 +31,13 @@ char *str_concat(char *s1, char *s2)
 	{
 		len2++;
 	}
+	concatenated = malloc((len1 + len2 + 1) * sizeof(char));
+
 	for (i = 0; i < len1; i++)
 	{
 		concatenated[i] = s1[i];
 	}
-	for (j = 0; j < len1; j++)
+	for (j = 0; j < len2; j++)
 	{
 		concatenated[i] = s2[j];
 	}
