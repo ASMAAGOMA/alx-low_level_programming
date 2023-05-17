@@ -6,16 +6,15 @@
  *
  *@str: the string to be printed
  *
- *Return: void
  */
 
 void _puts(char *str)
 {
-	int i;
+	int i = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 	}
-	putchar('\n');
+	_putchar('\n');
 }
