@@ -1,4 +1,4 @@
-#include "main.hi"
+#include "main.h"
 
 /**
  **_strstr - Locate a substring
