@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -17,7 +16,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int i = 0;
 	int j = 0;
 	unsigned int result_len = 0;
-	char *result = NULL;
+	char *result;
 
 	if (s1 != NULL)
 	{
