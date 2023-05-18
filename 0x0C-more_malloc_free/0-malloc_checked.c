@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
 
@@ -15,7 +14,6 @@ void *malloc_checked(unsigned int b)
 
 	if (ptr == NULL)
 	{
-		printf("failed to allocate the memory\n");
 		return (98);
 	}
 	return (ptr);
