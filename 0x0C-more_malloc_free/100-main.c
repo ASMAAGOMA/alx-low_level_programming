@@ -48,6 +48,7 @@ int main(void)
 	while (i < 98)
 	{
 		p[i++] = 98;
+	}
 
 		simple_print_buffer(p, 98);
 		free(p);
