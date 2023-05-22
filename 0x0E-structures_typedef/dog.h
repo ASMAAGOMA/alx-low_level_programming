@@ -9,6 +9,8 @@
  *
  * Description: info about the dog
  */
+#include <stdlib.h>
+#include "main.h"
 
 struct dog
 {
