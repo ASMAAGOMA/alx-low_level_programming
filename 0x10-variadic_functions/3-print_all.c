@@ -10,48 +10,46 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i, num;
+	int i = 0;
 	char c;
-	char *s;
-	float f;
+	char *s, *separator = "";
 
 	va_start(args, format);
-	i = 0;
-	while (format[i] != '\0')
+	if (format)
 	{
-		if (format[i] == 'c')
+	while (format[i])
+	{
+		switch (format[i])
 		{
-			c = va_arg(args, int);
-			printf("%c", c);
+			case 'c':
+				c = va_arg(args, int);
+				printf("%s%c", separator, c);
+				break;
+
+			case'i':
+				printf("%s%d", separator, va_arg(args, int));
+				break;
+
+			case'f':
+				printf("%s%f", separator, va_arg(args, double));
+				break;
+
+			case's':
+				s = va_arg(args, char *);
+				if (!s)
+					s = "(nil)";
+				printf("%s%s", separator, s);
+				break;
+
+			default:
+				i++;
+				continue;
 		}
-		else if (format[i] == 'i')
-		{
-			num = va_arg(args, int);
-			printf("%d", num);
-		}
-		else if (format[i] == 'f')
-		{
-			f = (float)va_arg(args, double);
-			printf("%f", f);
-		}
-		else if (format[i] == 's')
-		{
-			s = va_arg(args, char *);
-			if (s != NULL)
-				printf("%s", s);
-			else
-				 printf("(nil)");
-		}
-		if (format[i + 1] != '\0' &&
-				(format[i] == 'c' ||
-				 format[i] == 'i' ||
-				 format[i] == 'f' ||
-				 format[i] == 's'))
-		{
-			printf(", ");
-		}
+		separator = ", ";
 		i++;
 	}
+	}
+
 	printf("\n");
 	va_end(args);
 }
