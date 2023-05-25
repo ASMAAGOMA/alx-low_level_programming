@@ -1,17 +1,14 @@
 #include <stdio.h>
-#include <stddef.h>
 #include <stdarg.h>
 
 /**
  * print_all - a function that prints anything.
  * @format: argument
  */
-
 void print_all(const char * const format, ...)
 {
 	va_list args;
 	int i = 0;
-	char c;
 	char *s, *separator = "";
 
 	va_start(args, format);
@@ -22,8 +19,7 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				c = va_arg(args, int);
-				printf("%s%c", separator, c);
+				printf("%s%c", separator, va_arg(args, int));
 				break;
 
 			case'i':
@@ -49,7 +45,6 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	}
-
 	printf("\n");
 	va_end(args);
 }
