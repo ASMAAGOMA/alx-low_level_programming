@@ -10,16 +10,18 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int result = 0;
-	size_t stringlen = strlen(b);
 	unsigned int i = 0;
+	unsigned int j = 0;
 
 	if (b == NULL)
 		return (0);
-	for (i = 0; i < stringlen; i++)
+	while (b[i] != '\0')
+		i++;
+	for (j = 0; j < i; j++)
 	{
-		if (b[i] == '0')
+		if (b[j] == '0')
 			result = (result << 1) + 0;
-		else if(b[i] == '1')
+		else if (b[j] == '1')
 			result = (result << 1) + 1;
 		else
 			return (0);
