@@ -22,7 +22,9 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	}
 	else
 	{
-		dlistint_t *current = *head;
+		dlistint_t *current;
+
+		current = *head;
 		while (current->next != NULL)
 			current = current->next;
 		current->next = new_node;
