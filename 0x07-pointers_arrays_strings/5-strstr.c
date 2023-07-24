@@ -15,7 +15,7 @@ char *_strstr(char *haystack, char *needle)
 
 	if (*needle == '\0')
 	{
-		return haystack; // An empty needle is always present in the haystack
+		return (haystack);
 	}
 
 	while (*haystack != '\0')
