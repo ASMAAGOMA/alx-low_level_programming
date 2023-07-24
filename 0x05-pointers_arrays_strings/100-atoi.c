@@ -24,6 +24,7 @@ int _atoi(char *s)
 	{
 
 		int digit = *s - '0';
+
 		if (result > (INT_MAX - digit) / 10)
 		{
 
