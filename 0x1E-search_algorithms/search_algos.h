@@ -6,7 +6,11 @@
 #include <stdlib.h>
 
 /**
- * search algorithms
+ * search algorithms - search algorithms
+ * 
+ * @array: array
+ * @size: size
+ * @value: value
 */
 int linear_search(int *array, size_t size, int value);
 int binary_search(int *array, size_t size, int value);
