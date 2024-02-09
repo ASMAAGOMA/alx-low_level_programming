@@ -1,43 +1,61 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
 #include "search_algos.h"
+#include <stdio.h>
 
 /**
- * exponential_search - searches for a value in a sorted array of integers
- * using the exponential search algorithm
- * @array: pointer to the first element of the array to search into
- * @size: number of elements in the array
- * @value: value to search for
+ * print_array - print an array of integers
  *
- * Return: index where value is located, or -1 if not found
+ * @array: the array to print
+ * @size: the size of the array
+ *
+ * Return: nothing!
  */
+void print_array(int *array, size_t size)
+{
+	size_t i;
 
+	if (!(array && size))
+		return;
+
+	for (i = 0; i < size - 1; i++)
+		printf("%i, ", array[i]);
+	printf("%i\n", array[i]);
+}
+
+/**
+ * exponential_search - finds an element in an array using exponential search
+ *
+ * @array: an array of integers
+ * @size: the size of the array
+ * @value: the value to search for
+ *
+ * Return: the index where @value was found or -1 if not found
+ */
 int exponential_search(int *array, size_t size, int value)
 {
-    size_t high, low, i = 1;
+	size_t hi, lo = 0, mid;
 
-	low = 0;
-	high = size - 1;
-
-	if (array == NULL || size == 0)
+	if (!(array && size))
 		return (-1);
 
-    if (high - low <= 0)
-    {
-        return (-1);
-    }
+	for (hi = 1; hi < size && array[hi] < value; hi *= 2)
+	{
+		printf("Value checked array[%lu] = [%i]\n", hi, array[hi]);
+		lo = hi;
+	}
+	hi = MIN(hi, size - 1);
+	printf("Value found between indexes [%lu] and [%lu]\n", lo, hi);
 
-    while (i <= high - low + 1)
-    {
-        if (array[i] < value)
-        {
-            i *= 2;
-        }
-        else
-        {
-            break;
-        }
-    }
-    return (binary_search(array, size, value));
+	while (lo <= hi)
+	{
+		printf("Searching in array: ");
+		print_array(&array[lo], (hi - lo) + 1);
+		mid = (double)((lo + hi) / 2);
+		if (array[mid] == value)
+			return (mid);
+		else if (array[mid] < value)
+			lo = mid + 1;
+		else
+			hi = mid - 1;
+	}
+	return (-1);
 }
